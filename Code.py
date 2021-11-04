@@ -256,3 +256,4 @@ fig = px.scatter(data_frame=populatie_inkomen_opleiding,
                 labels = {'pop_2019': "Populatie",
                     "particuliere huishoudens excl. studenten, gem. besteedsbaar inkomen": "Het gemiddelde besteedbare inkomen per huishouden"})
 fig.show()
+st.plotly_chart(fig)
