@@ -145,7 +145,7 @@ fig = px.histogram(data_frame=inkomen, x='provincie', y='particuliere huishouden
                      "provincie": "Provincies"})
 fig.update_traces(opacity=0.8)
 fig.show()
-
+st.plotly_chart(fig)
 inkomen.head(1)
 
 fig = px.histogram(data_frame=inkomen, x='provincie', y='particuliere huishoudens excl. studenten, gem. besteedsbaar inkomen', 
@@ -179,7 +179,7 @@ fig.update_layout(updatemenus=[ dict( buttons=list([
             y=1.15, yanchor="top"),])
 fig.update_traces(opacity=0.8)
 fig.show()
-
+st.plotly_chart(fig)
 fig = px.histogram(data_frame=inkomen, x='provincie', y='particuliere huishoudens excl. studenten, gem. besteedsbaar inkomen', 
                    title='Gemiddeld besteedbaar inkomen',
                    category_orders=dict(provincie = ['Groningen (PV)',
@@ -211,7 +211,7 @@ fig.update_layout(updatemenus=[ dict( buttons=list([
             y=1.15, yanchor="top"),])
 fig.update_traces(opacity=0.8)
 fig.show()
-
+st.plotly_chart(fig)
 inkomen.columns
 
 ## Inkomen scatterplot
@@ -240,7 +240,7 @@ fig = px.histogram(data_frame=aantal_mensen, x='provincie', y='pop_2019',
                     "provincie": "Provincies"})
 fig.update_traces(opacity=0.8)
 fig.show()
-
+st.plotly_chart(fig)
 ## Scatter plot
 
 populatie_inkomen_opleiding = populatie_inkomen_opleiding.drop(index=0)
