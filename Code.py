@@ -182,6 +182,8 @@ fig.update_layout(updatemenus=[ dict( buttons=list([
 fig.update_traces(opacity=0.8)
 fig.show()
 st.plotly_chart(fig)
+
+with col3:
 fig = px.histogram(data_frame=inkomen, x='provincie', y='particuliere huishoudens excl. studenten, gem. besteedsbaar inkomen', 
                    title='Gemiddeld besteedbaar inkomen',
                    category_orders=dict(provincie = ['Groningen (PV)',
@@ -222,7 +224,6 @@ inkomen.columns
 
 aantal_mensen.reset_index()
 aantal_mensen = aantal_mensen.drop(index=0)
-with col3:
 fig = px.histogram(data_frame=aantal_mensen, x='provincie', y='pop_2019', 
                    title='Populatie per regio',
                    category_orders=dict(provincie = ['Groningen (PV)',
