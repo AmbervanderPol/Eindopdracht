@@ -1,0 +1,33 @@
+﻿0;Onderwijssoort;Totaal voortgezet onderwijs (vo);Vavo;Totaal mbo (incl. extranei);Hbo-associate degree;Hbo-bachelor;Hbo-master/vervolgopleiding;Wo-bachelor;Wo-master;Wo-doctoraal;Wo-vervolgopleiding;;;
+Nederland;aantal;190908;8053;154500;3478;67403;4043;38159;42532;0;3699;;;
+Groningen (PV);aantal;5546;236;5902;130;3245;174;3122;2507;0;312;;;
+Fryslân (PV);aantal;7712;293;7425;140;2494;164;289;314;0;44;;;
+Drenthe (PV);aantal;5885;227;5313;110;1295;74;214;183;0;21;;;
+Overijssel (PV);aantal;14597;529;12806;169;5074;248;1294;1374;0;151;;;
+Flevoland (PV);aantal;5198;201;4992;140;1305;52;327;286;0;34;;;
+Gelderland (PV);aantal;24653;1062;19687;328;7854;374;3797;4127;0;458;;;
+Utrecht (PV);aantal;15782;619;10171;162;5229;355;4001;4212;0;503;;;
+Noord-Holland (PV);aantal;29578;1501;22351;240;9582;575;6552;7507;0;920;;;
+Zuid-Holland (PV);aantal;38947;1707;31217;907;12601;857;9532;10124;0;828;;;
+Zeeland (PV);aantal;4078;128;3695;93;1068;49;242;92;0;7;;;
+Noord-Brabant (PV);aantal;28188;948;21720;840;11071;537;3588;4254;0;180;;;
+Limburg (PV);aantal;10369;579;8487;205;3886;188;1954;1868;0;200;;;
+Niet in te delen (PV);aantal;375;23;734;14;2699;396;3247;5684;0;41;;;
+;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;
+;Nederland;Groningen (PV);Fryslân (PV);Drenthe (PV);Overijssel (PV);Flevoland (PV);Gelderland (PV);Utrecht (PV);Noord-Holland (PV);Zuid-Holland (PV);Zeeland (PV);Noord-Brabant (PV);Limburg (PV);Niet in te delen (PV)
+Onderwijssoort;aantal;aantal;aantal;aantal;aantal;aantal;aantal;aantal;aantal;aantal;aantal;aantal;aantal;aantal
+Totaal voortgezet onderwijs (vo);190908;5546;7712;5885;14597;5198;24653;15782;29578;38947;4078;28188;10369;375
+Vavo;8053;236;293;227;529;201;1062;619;1501;1707;128;948;579;23
+Totaal mbo (incl. extranei);154500;5902;7425;5313;12806;4992;19687;10171;22351;31217;3695;21720;8487;734
+Hbo-associate degree;3478;130;140;110;169;140;328;162;240;907;93;840;205;14
+Hbo-bachelor;67403;3245;2494;1295;5074;1305;7854;5229;9582;12601;1068;11071;3886;2699
+Hbo-master/vervolgopleiding;4043;174;164;74;248;52;374;355;575;857;49;537;188;396
+Wo-bachelor;38159;3122;289;214;1294;327;3797;4001;6552;9532;242;3588;1954;3247
+Wo-master;42532;2507;314;183;1374;286;4127;4212;7507;10124;92;4254;1868;5684
+Wo-doctoraal;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+Wo-vervolgopleiding;3699;312;44;21;151;34;458;503;920;828;7;180;200;41
