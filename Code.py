@@ -125,9 +125,6 @@ populatie_inkomen_opleiding.head()
 # Grafieken
 
 ## Inkomen histogram
-col1, col2, col3 = st.columns(3)
-
-with col1:
 fig = px.histogram(data_frame=inkomen, x='provincie', y='particuliere huishoudens excl. studenten, gem. besteedsbaar inkomen', 
                    title='Gemiddeld besteedbaar inkomen',
                    category_orders=dict(provincie = ['Groningen (PV)',
@@ -149,7 +146,7 @@ fig.update_traces(opacity=0.8)
 fig.show()
 st.plotly_chart(fig)
 inkomen.head(1)
-with col2:
+
 fig = px.histogram(data_frame=inkomen, x='provincie', y='particuliere huishoudens excl. studenten, gem. besteedsbaar inkomen', 
                    title='Gemiddeld besteedbaar inkomen',
                    category_orders=dict(provincie = ['Groningen (PV)',
@@ -183,7 +180,6 @@ fig.update_traces(opacity=0.8)
 fig.show()
 st.plotly_chart(fig)
 
-with col3:
 fig = px.histogram(data_frame=inkomen, x='provincie', y='particuliere huishoudens excl. studenten, gem. besteedsbaar inkomen', 
                    title='Gemiddeld besteedbaar inkomen',
                    category_orders=dict(provincie = ['Groningen (PV)',
