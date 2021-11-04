@@ -1,16 +1,6 @@
-import pandas as pd
-import requests
-import json
-import cbsodata
-import geopandas as gpd
-from shapely.geometry.multipolygon import MultiPolygon
-import shapely.wkt
-import folium
-import numpy as np
-import plotly.graph_objects as go
-import streamlit as st
 ## Importeren van packages
 
+import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import os
@@ -225,62 +215,7 @@ fig.show()
 
 inkomen.columns
 
-fig.update_layout(updatemenus=[ dict( buttons=list([
-                    dict(args=["particuliere huishoudens excl. studenten"],
-                    label="particuliere huishoudens excl. studenten",
-                    method="restyle"),
-                dict(args=["particuliere huishoudens excl. studenten, gem. besteedsbaar inkomen"],
-                    label="particuliere huishoudens excl. studenten, gem. besteedsbaar inkomen",
-                    method="restyle"),
-                dict(args=["eenpersoons- huishouden, gem. besteedsbaar inkomen"],
-                    label="eenpersoons- huishouden, gem. besteedsbaar inkomen",
-                    method="restyle"),
-                dict(args=["eenouder- gezin, gem. besteedsbaar inkomen"],
-                    label="eenouder- gezin, gem. besteedsbaar inkomen",
-                    method="restyle"),
-                dict(args=["paar zonder kind, gem. besteedsbaar inkomen"],
-                    label="paar zonder kind, gem. besteedsbaar inkomen",
-                    method="restyle")]),
-            direction="down",
-            pad={"r": 10, "t": 10},
-            showactive=True,
-            x=0.001, xanchor="left",
-            y=1.15, yanchor="top"),])
-
-fig = px.histogram(data_frame=inkomen, x='provincie', y=buttons,
-                   title='Gemiddeld besteedbaar  inkomen',
-                   category_orders=dict(provincie = ['Groningen (PV)',
-                                                     'Fryslân (PV)',
-                                                     'Drenthe (PV)',
-                                                     'Overijssel (PV)',
-                                                     'Flevoland (PV)',
-                                                     'Gelderland (PV)',
-                                                     'Utrecht (PV)', 
-                                                     'Noord-Holland (PV)',
-                                                     'Zuid-Holland (PV)',
-                                                     'Zeeland (PV)',
-                                                     'Noord-Brabant (PV)',
-                                                     'Limburg (PV)']),
-                   color='provincie',
-                   labels={'particuliere huishoudens excl. studenten, gem. besteedsbaar inkomen': "Gemiddeld besteedbaar inkomen",
-                     "provincie": "Provincies"})
-fig.update_traces(opacity=0.8, 
-                  {'updatemenus':[{'active':True, 'buttons': dropdown_buttons,'x': 1, 'y': 1.2}]})
-fig.show()
-
 ## Inkomen scatterplot
-
-#inkomen_groupby = inkomen.groupby(['particuliere huishoudens excl. studenten', 'particuliere huishoudens excl. studenten, gem. besteedsbaar inkomen']).mean()
-inkomen_provincie = inkomen['provincie']
-fig = px.scatter_matrix(inkomen_provincie,
-                        dimensions=["particuliere huishoudens excl. studenten", "particuliere huishoudens excl. studenten, gem. besteedsbaar inkomen"])
-
-fig.update_traces(diagonal_visible=False) # laat diagonale grafieken weg
-fig.update_layout(width=1000, height=700, # Maak grafiek groter
-                  legend_title = 'Inkomen per provincie')
-
-plt.scatter(populatie_inkomen['pop_2019'], populatie_inkomen['particuliere huishoudens excl. studenten'])
-plt.show()
 
 ### Aantal mensen per regio
 
