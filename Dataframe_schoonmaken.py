@@ -350,4 +350,4 @@ df.head()
 
 # Dataset opslaan in csv
 
-df.to_csv('Opleiding_inkomen.csv', index = False)
+df.to_csv('Opleiding_inkomen.csv')
