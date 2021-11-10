@@ -30,14 +30,12 @@ df = pd.read_csv('Opleiding_inkomen.csv')
 col1, col2 = st.columns(2)
 
 with col1: 
-  st.markdown('''**Rijksdienst voor het Wegverkeer (RDW)**  
-  De data over auto’s en hun brandstoftypes komt van het RDW. Deze twee datasets zijn als csv binnengehaald, samengevoegd en vervolgens **geïnspecteerd**.  
+  st.markdown('''**Inkomen en opleiding**  
+  Allemaal informatie over de inkomen en opleiding.  
   
-  •	In de datasets komen geen **duplicates** voor.  
-  •	**Missende waardes** zijn niet meegenomen in de visualisatie van de data.  
-  •	Bij het inspecteren van deze data zijn geen nieuwe variabelen gegenereerd maar is er wel een **nieuwe dataset** gecreëerd door twee datasets te mergen.  
-  
-  bron: https://opendata.rdw.nl/Voertuigen/Open-Data-RDW-Gekentekende_voertuigen_brandstof/8ys7-d773 en https://opendata.rdw.nl/Voertuigen/Open-Data-RDW-Gekentekende_voertuigen/m9d7-ebf2''')
+  •	Wat gaan we zien?
+  •	Wat is opvallend?
+  •	Andere leuke informatie''')
 with col2: 
   st.markdown('''**Kaart**''')
   # Kaart
