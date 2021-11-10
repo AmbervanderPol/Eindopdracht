@@ -59,7 +59,7 @@ with col2:
     Eenpersoonshuishouden.add_child(folium.vector_layers.Circle(radius = row_values['eenpersoonshuishouden_radius'], location = row_values['middelste_punt'], fill = True, color='dimgrey').add_to(m))
     Particulierehuishoudens.add_child(folium.vector_layers.Circle(radius = row_values['particulierehuishouden_radius'], location = row_values['middelste_punt'], fill = True, color='lightcoral').add_to(m))
     Paarkinderen.add_child(folium.vector_layers.Circle(radius = row_values['paarmetkinderen_radius'], location = row_values['middelste_punt'], fill = True, color='skyblue').add_to(m))
-    folium.LayerControl().add_to(m)
+  folium.LayerControl().add_to(m)
     # # folium.TileLayer('cartodbpositron', name='Onderwijs niveau').add_to(LayerControl)
     # display(m)
     # st.map(m)
