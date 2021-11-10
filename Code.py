@@ -165,3 +165,41 @@ st.pyplot(fig)
 #go.Scatter(x=df['Totaal mbo (incl. extranei)_p'], y=df['paar met kinderen, gem. besteedbaar inkomen'])
 #In de grafiek is een duidelijke outlier te zien. Die er voor zorgt da
 
+
+  ## Boxplot
+col1, col2 = st.columns(2)
+with col1: 
+  ### Inkomen
+  df_labels = df[['particuliere huishoudens excl. studenten, gem. besteedbaar inkomen', 'eenpersoons- huishouden, gem. besteedbaar inkomen', 'eenouder- gezin, gem. besteedbaar inkomen', 'paar zonder kind, gem. besteedbaar inkomen', 'paar met kinderen, gem. besteedbaar inkomen', 'inkomen als werknemer, gem. besteedbaar inkomen']]
+  df_labels = list(df_labels.columns.tolist())
+  provincie = ["Groningen (PV)", 'Fryslân (PV)','Drenthe (PV)','Overijssel (PV)','Flevoland (PV)','Gelderland (PV)','Utrecht (PV)','Noord-Holland (PV)','Zuid-Holland (PV)','Zeeland (PV)','Noord-Brabant (PV)','Limburg (PV)']
+  color_trace = ["rgb(255, 211, 92)", "rgb(68, 175, 105)", "rgb(133, 199, 242)", "rgb(252, 103, 34)","rgb(213, 114, 148)","rgb(255, 0, 110)","rgb(9, 68, 93)","rgb(131, 56, 236)","rgb(255, 133, 214)","rgb(58, 134, 255)","rgb(255, 251, 29)","rgb(119, 228, 80)" ] # maak lijst met kleuren
+  fig = go.Figure()
+  j = 0
+  dropdown_buttons = []
+  for i in df_labels:
+    fig.add_trace(go.Bar(x = df['provincie'], y = df[i], name = i, text=df[i], marker_color=px.colors.qualitative.Bold))
+    dropdown_buttons.append({'label':df_labels[j], 'method': 'update', 'args': [{"visible":[x==i for x in df_labels]}]})
+    j += 1
+
+  fig.update_traces(texttemplate='%{text:.1f}', textposition='outside')
+  fig.update_layout({'updatemenus':[{'active':True, 'buttons': dropdown_buttons, 'x': 1, 'y': 1.2}]},annotations = [{'text':"Inkomen per soort", 'font_size':20, 'x': 0, 'xref':"paper", 'y':1.2, 'yref':"paper",'showarrow':False}], showlegend = False)
+  fig.update_yaxes(range=[0, 80], title = 'inkomen in €1000 ')
+  fig.show()  
+  st.plotly_chart(fig,)
+with col2:
+  opleiding_labels = df[[ 'Totaal voortgezet onderwijs (vo)_p', 'Totaal mbo (incl. extranei)_p','Vavo_p', 'Hbo-associate degree_p', 'Hbo-bachelor_p', 'Hbo-master/vervolgopleiding_p', 'Wo-bachelor_p', 'Wo-master_p','Wo-doctoraal_p', 'Wo-vervolgopleiding_p']]
+  opleiding_labels = list(opleiding_labels.columns.tolist())
+  fig = go.Figure()
+  j = 0
+  dropdown_buttons = []
+  for i in opleiding_labels:
+    fig.add_trace(go.Bar(x = df['provincie'], y = df[i], name = i, text=df[i], marker_color=px.colors.qualitative.Bold))
+    dropdown_buttons.append({'label':opleiding_labels[j], 'method': 'update', 'args': [{"visible":[x==i for x in opleiding_labels]}]})
+    j += 1
+  fig.update_traces(texttemplate='%{text:.1f}', textposition='outside')
+  fig.update_layout({'updatemenus':[{'active':True, 'buttons': dropdown_buttons, 'x': 1, 'y': 1.2}]},annotations = [{'text':"Opleiding per niveau", 'font_size':20,'x':0, 'xref':"paper", 'y':1.2, 'yref':"paper",'showarrow':False}],showlegend = False)
+  fig.update_layout(yaxis_range=[0,1.5])
+  fig.show()
+  st.plotly_chart(fig)
+
