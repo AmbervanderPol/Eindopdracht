@@ -96,7 +96,7 @@ with col2:
     # # folium.TileLayer('cartodbpositron', name='Onderwijs niveau').add_to(LayerControl)
     # display(m)
     # st.map(m)
-  folium_static(m, width = 300, height = 600)
+  folium_static(m, width = 500, height = 600)
 
 #col1, col2 = st.columns(2)
 #with col1: 
