@@ -10,14 +10,19 @@ import geopandas as gpd
 from plotly.subplots import make_subplots
 import folium
 import json
-
 import seaborn as sns
 import warnings
 warnings.filterwarnings('ignore')
 
-# Importen van de data
+#Title
+st.title("Het verband tussen opleiding en inkomen")
+st.subhead(" Gemaakt door Oussama Abou en Amber van der Pol")
+st.sidebar.write("Dit is een test")
+st.sidebar.button("Click me!")
 
+# Importen van de data
 df = pd.read_csv('Opleiding_inkomen.csv')
+
 
 # Subscatter plot
 fig = make_subplots(rows=3, cols=3, subplot_titles=("Mbo scholieren","Hbo studenten", "Wo studenten"))
