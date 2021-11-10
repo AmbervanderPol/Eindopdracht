@@ -39,7 +39,7 @@ with col1:
   
   bron: https://opendata.rdw.nl/Voertuigen/Open-Data-RDW-Gekentekende_voertuigen_brandstof/8ys7-d773 en https://opendata.rdw.nl/Voertuigen/Open-Data-RDW-Gekentekende_voertuigen/m9d7-ebf2''')
 with col2: 
-  st.markdown('''**Kaart**)
+  st.markdown('''**Kaart**''')
   # Kaart
   coördinaten = [[53.217503, 6.566677], [53.200736, 5.795717], [52.878580, 6.646088], [52.441316, 6.398667], [52.435788, 5.453631],[52.056569, 6.028022], [52.091001, 5.117947], [52.377173, 4.902515], [51.916845, 4.482816], [51.495115, 3.842055], [51.592708, 5.129947], [51.187293, 5.999778]]
   df['middelste_punt'] = coördinaten
