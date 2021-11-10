@@ -54,4 +54,4 @@ for row in df.iterrows():
 folium.LayerControl().add_to(m)
 # folium.TileLayer('cartodbpositron', name='Onderwijs niveau').add_to(LayerControl)
 display(m)
-
+st.map(m)
