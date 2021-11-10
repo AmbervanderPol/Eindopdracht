@@ -103,37 +103,21 @@ with col2:
 
 # Subscatter plot
 fig = make_subplots(rows=3, cols=3, subplot_titles=("Mbo scholieren","Hbo studenten", "Wo studenten"))
-fig.add_trace(
-    go.Scatter(x=df['Totaal mbo (incl. extranei)_p'], y=df['particuliere huishoudens excl. studenten, gem. besteedbaar inkomen']
-               , mode='markers+text', marker_color=px.colors.qualitative.Bold), row=1, col=1)
-fig.add_trace(
-    go.Scatter(x=df['Hbo_p'], y=df['particuliere huishoudens excl. studenten, gem. besteedbaar inkomen']
-               , mode='markers+text', marker_color=px.colors.qualitative.Bold),row=1, col=2)
-fig.add_trace(
-    go.Scatter(x=df['Wo_p'], y=df['particuliere huishoudens excl. studenten, gem. besteedbaar inkomen']
-              , mode='markers+text', marker_color=px.colors.qualitative.Bold),row=1, col=3)
-fig.add_trace(
-    go.Scatter(x=df['Totaal mbo (incl. extranei)_p'], y=df['eenpersoons- huishouden, gem. besteedbaar inkomen']
-              , mode='markers+text', marker_color=px.colors.qualitative.Bold), row=2, col=1)
-fig.add_trace(
-    go.Scatter(x=df['Hbo_p'], y=df['eenpersoons- huishouden, gem. besteedbaar inkomen']
-              , mode='markers+text', marker_color=px.colors.qualitative.Bold), row=2, col=2)
+fig.add_trace(go.Scatter(x=df['Totaal mbo (incl. extranei)_p'], y=df['particuliere huishoudens excl. studenten, gem. besteedbaar inkomen'], mode='markers+text', marker_color=px.colors.qualitative.Bold), row=1, col=1)
+fig.add_trace(go.Scatter(x=df['Hbo_p'], y=df['particuliere huishoudens excl. studenten, gem. besteedbaar inkomen'], mode='markers+text', marker_color=px.colors.qualitative.Bold),row=1, col=2)
+fig.add_trace(go.Scatter(x=df['Wo_p'], y=df['particuliere huishoudens excl. studenten, gem. besteedbaar inkomen'], mode='markers+text', marker_color=px.colors.qualitative.Bold),row=1, col=3)
+fig.add_trace(go.Scatter(x=df['Totaal mbo (incl. extranei)_p'], y=df['eenpersoons- huishouden, gem. besteedbaar inkomen'], mode='markers+text', marker_color=px.colors.qualitative.Bold), row=2, col=1)
+fig.add_trace(go.Scatter(x=df['Hbo_p'], y=df['eenpersoons- huishouden, gem. besteedbaar inkomen'], mode='markers+text', marker_color=px.colors.qualitative.Bold), row=2, col=2)
 
-fig.add_trace(
-    go.Scatter(x=df['Wo_p'], y=df['eenpersoons- huishouden, gem. besteedbaar inkomen']
-              , mode='markers+text', marker_color=px.colors.qualitative.Bold), row=2, col=3)
-fig.add_trace(
-    go.Scatter(x=df['Totaal mbo (incl. extranei)_p'], y=df['paar met kinderen, gem. besteedbaar inkomen']
-              , mode='markers+text', marker_color=px.colors.qualitative.Bold), row=3, col=1)
-fig.add_trace(
-    go.Scatter(x=df['Hbo_p'], y=df['paar met kinderen, gem. besteedbaar inkomen']
-              , mode='markers+text', marker_color=px.colors.qualitative.Bold), row=3, col=2)
-fig.add_trace(
-    go.Scatter(x=df['Wo_p'], y=df['paar met kinderen, gem. besteedbaar inkomen'],
-               mode='markers+text', marker_color=px.colors.qualitative.Bold), row=3, col=3)
+fig.add_trace(go.Scatter(x=df['Wo_p'], y=df['eenpersoons- huishouden, gem. besteedbaar inkomen'], mode='markers+text', marker_color=px.colors.qualitative.Bold), row=2, col=3)
+fig.add_trace(go.Scatter(x=df['Totaal mbo (incl. extranei)_p'], y=df['paar met kinderen, gem. besteedbaar inkomen'], mode='markers+text', marker_color=px.colors.qualitative.Bold), row=3, col=1)
+fig.add_trace(go.Scatter(x=df['Hbo_p'], y=df['paar met kinderen, gem. besteedbaar inkomen'], mode='markers+text', marker_color=px.colors.qualitative.Bold), row=3, col=2)
+fig.add_trace(go.Scatter(x=df['Wo_p'], y=df['paar met kinderen, gem. besteedbaar inkomen'], mode='markers+text', marker_color=px.colors.qualitative.Bold), row=3, col=3)
+
 fig['layout']['yaxis1']['title']='Paar met<br>kinderen'
 fig['layout']['yaxis4']['title']='Eenpersoons-<br>huishouden'
 fig['layout']['yaxis7']['title']='Particuliere huishoudens<br>excl. student'
+
 fig.update_yaxes(range=[15, 80])
 fig.update_xaxes(range=[0, 1.2])
 fig.update_layout(height=800, width=900, title_text="Inkomen en opleiding",showlegend=False)
@@ -147,20 +131,24 @@ sns_ax3 = sns.regplot(x=df['Totaal mbo (incl. extranei)_p'], y=df['paar met kind
 sns_ax3.set_xlabel('Aantal Mbo studentenx')
 sns_ax3.set_ylabel('gem besteedbaar inkomen, paar met kinderen')
 sns_ax3.set_title('Mbo studeten x gem besteedbaar inkomen, paar met kinderen')
-#go.Scatter(x=df['Totaal mbo (incl. extranei)_p'], y=df['paar met kinderen, gem. besteedbaar inkomen'])
+fig3.show()
+st.pyplot(fig3)
 #TEKST: Bij deze grafiek hoort een corelatiecoefficient van -0.75. Dit betekent dat er een redelijk sterke conclusie kan worden getrokken dat bij een paar met kinderen met een hoger besteedbaar inkomen minder Mbo studeren
 
 sns_ax2 = sns.regplot(x='Wo', y='paar met kinderen, gem. besteedbaar inkomen', data=df, order=1, ci=None)
 sns_ax2.set_title('Wo studenten x gem besteedbaar inkomen, paar met kinderen')
 sns_ax2.set_ylabel('gem. besteedbaar inkomen, paar met kinderen')
 sns_ax2.set_xlabel('Aantal WO studenten')
+fig2.show()
+st.pyplot(fig2)
 #TEKST: In onderstaand grafiek is te zien hoe het percentage universiteits studenten lineair stijgt als het gemiddelde besteedbare inkomen van een paar met kinderen ook stijgt. bij een lage aantal studenten is te zien dat het inkomen geclusterd is. naarmate het inkomen stijgt is de afstand tot de regressielijn per provincie groter. correlatiecoefficient is 0.71. wat betekent dat er een redelijk verband is tussen de twee variabelen.
 
 sns_ax1 = sns.regplot(x=df['Wo_p'], y=df['particuliere huishoudens excl. studenten, gem. besteedbaar inkomen'], ci=None)
 sns_ax1.set_title('Aantal WO studenten x particuliere huishoudens exc. studententen')
 sns_ax1.set_ylabel('particuliere huishoudens excl. studententen')
 sns_ax1.set_xlabel('percentage Wo studenten')
-#st.pyplot(fig)
+fig1.show()
+st.pyplot(fig1)
 
 #go.Scatter(x=df['Totaal mbo (incl. extranei)_p'], y=df['paar met kinderen, gem. besteedbaar inkomen'])
 #In de grafiek is een duidelijke outlier te zien. Die er voor zorgt da
