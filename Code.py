@@ -94,7 +94,7 @@ for row in df.iterrows():
                                           fill = True, color='skyblue').add_to(m))
 folium.LayerControl().add_to(m)
 # folium.TileLayer('cartodbpositron', name='Onderwijs niveau').add_to(LayerControl)
-#display(m)
+display(m)
 st.map(m)
 
 ## Boxplot
