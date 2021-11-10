@@ -93,9 +93,10 @@ for row in df.iterrows():
     Paarkinderen.add_child(folium.vector_layers.Circle(radius = row_values['paarmetkinderen_radius'], location = row_values['middelste_punt'], 
                                           fill = True, color='skyblue').add_to(m))
 folium.LayerControl().add_to(m)
-# folium.TileLayer('cartodbpositron', name='Onderwijs niveau').add_to(LayerControl)
-display(m)
-st.map(m)
+# # folium.TileLayer('cartodbpositron', name='Onderwijs niveau').add_to(LayerControl)
+# display(m)
+# st.map(m)
+folium_static(m, width = 1200, height = 700)
 
 ## Boxplot
 ### Inkomen
