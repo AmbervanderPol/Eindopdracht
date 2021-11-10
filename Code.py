@@ -131,24 +131,24 @@ sns_ax3 = sns.regplot(x=df['Totaal mbo (incl. extranei)_p'], y=df['paar met kind
 sns_ax3.set_xlabel('Aantal Mbo studentenx')
 sns_ax3.set_ylabel('gem besteedbaar inkomen, paar met kinderen')
 sns_ax3.set_title('Mbo studeten x gem besteedbaar inkomen, paar met kinderen')
-fig3.show()
-st.pyplot(fig3)
+plt3.show()
+st.pyplot(plt3)
 #TEKST: Bij deze grafiek hoort een corelatiecoefficient van -0.75. Dit betekent dat er een redelijk sterke conclusie kan worden getrokken dat bij een paar met kinderen met een hoger besteedbaar inkomen minder Mbo studeren
 
 sns_ax2 = sns.regplot(x='Wo', y='paar met kinderen, gem. besteedbaar inkomen', data=df, order=1, ci=None)
 sns_ax2.set_title('Wo studenten x gem besteedbaar inkomen, paar met kinderen')
 sns_ax2.set_ylabel('gem. besteedbaar inkomen, paar met kinderen')
 sns_ax2.set_xlabel('Aantal WO studenten')
-fig2.show()
-st.pyplot(fig2)
+plt2.show()
+st.pyplot(plt2)
 #TEKST: In onderstaand grafiek is te zien hoe het percentage universiteits studenten lineair stijgt als het gemiddelde besteedbare inkomen van een paar met kinderen ook stijgt. bij een lage aantal studenten is te zien dat het inkomen geclusterd is. naarmate het inkomen stijgt is de afstand tot de regressielijn per provincie groter. correlatiecoefficient is 0.71. wat betekent dat er een redelijk verband is tussen de twee variabelen.
 
 sns_ax1 = sns.regplot(x=df['Wo_p'], y=df['particuliere huishoudens excl. studenten, gem. besteedbaar inkomen'], ci=None)
 sns_ax1.set_title('Aantal WO studenten x particuliere huishoudens exc. studententen')
 sns_ax1.set_ylabel('particuliere huishoudens excl. studententen')
 sns_ax1.set_xlabel('percentage Wo studenten')
-fig1.show()
-st.pyplot(fig1)
+plt1.show()
+st.pyplot(plt1)
 
 #go.Scatter(x=df['Totaal mbo (incl. extranei)_p'], y=df['paar met kinderen, gem. besteedbaar inkomen'])
 #In de grafiek is een duidelijke outlier te zien. Die er voor zorgt da
