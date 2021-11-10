@@ -16,9 +16,9 @@ warnings.filterwarnings('ignore')
 
 #Title
 st.title('''Het verband tussen opleiding en inkomen''')
-st.subhead('''Gemaakt door Oussama Abou en Amber van der Pol''')
-st.sidebar.write('''Dit is een test''')
-st.sidebar.button('''Click me!''')
+# st.subhead('''Gemaakt door Oussama Abou en Amber van der Pol''')
+# st.sidebar.write('''Dit is een test''')
+# st.sidebar.button('''Click me!''')
 
 # Importen van de data
 df = pd.read_csv('Opleiding_inkomen.csv')
