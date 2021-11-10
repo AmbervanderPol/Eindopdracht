@@ -36,39 +36,6 @@ with col1:
   •	Wat gaan we zien?
   •	Wat is opvallend?
   •	Andere leuke informatie''')
-  ## Boxplot
-### Inkomen
-fig1 = go.Figure()
-fig1.add_trace(go.Box(y=df['particuliere huishoudens excl. studenten, gem. besteedbaar inkomen'], name = 'Particuliere huishoudens excl. studenten' , marker_color='rgb(127, 60, 141)'))
-fig1.add_trace(go.Box(y=df['eenpersoons- huishouden, gem. besteedbaar inkomen'], name = 'Eenpersoons- huishouden', marker_color='rgb(17, 165, 121)'))
-fig1.add_trace(go.Box(y=df['eenouder- gezin, gem. besteedbaar inkomen'], name = 'Eenouder- gezin', marker_color='rgb(57, 105, 172)'))
-fig1.add_trace(go.Box(y=df['paar zonder kind, gem. besteedbaar inkomen'], name = 'Paar zonder kind', marker_color='rgb(242, 183, 1)'))
-fig1.add_trace(go.Box(y=df['paar met kinderen, gem. besteedbaar inkomen'], name = 'Paar met kinderen', marker_color='rgb(231, 63, 116)'))
-fig1.add_trace(go.Box(y=df['inkomen als werknemer, gem. besteedbaar inkomen'], name = 'Inkomen als werknemer', marker_color='rgb(128, 186, 90)'))
-fig1.update_layout(title_text = 'Gemiddeld besteedbaar inkomen per soort huishouden', legend_title='Verschillende huishoudens:')
-fig1.update_yaxes(title = 'Gemiddeld besteedbaar inkomen')
-fig1.show()
-st.plotly_chart(fig1, layout = 'small')
-
-### Opleiding
-fig2 = go.Figure()
-fig2.add_trace(go.Box(y=df['Totaal voortgezet onderwijs (vo)'], name = 'Totaal voortgezet onderwijs (vo)', marker_color='rgb(127, 60, 141)' ))
-fig2.add_trace(go.Box(y=df['Vavo'], name = 'Vavo', marker_color='rgb(165, 170, 153)'))
-fig2.add_trace(go.Box(y=df['Totaal mbo (incl. extranei)'], name = 'Totaal mbo (incl. extranei)', marker_color='rgb(17, 165, 121)'))
-fig2.add_trace(go.Box(y=df['Hbo-associate degree'], name = 'Hbo-associate degree', marker_color='rgb(57, 105, 172)'))
-fig2.add_trace(go.Box(y=df['Hbo-bachelor'], name = 'Hbo-bachelor', marker_color='rgb(242, 183, 1)'))
-fig2.add_trace(go.Box(y=df['Hbo-master/vervolgopleiding'], name = 'Hbo-master/vervolgopleiding', marker_color='rgb(231, 63, 116)'))
-fig2.add_trace(go.Box(y=df['Wo-bachelor'], name = 'Wo-bachelor', marker_color='rgb(128, 186, 90)'))
-fig2.add_trace(go.Box(y=df['Wo-master'],  name = 'Wo-master', marker_color='rgb(230, 131, 16)'))
-fig2.add_trace(go.Box(y=df['Wo-doctoraal'],  name = 'Wo-doctoraal', marker_color='rgb(0, 134, 149)'))
-fig2.add_trace(go.Box(y=df['Wo-vervolgopleiding'], name = 'Wo-vervolgopleiding', marker_color='rgb(207, 28, 144)'))
-fig2.update_layout(title_text = 'Aantal afgestudeerde per opleidingssoort', legend_title='Opleiding:')
-fig2.update_traces(width=1)
-fig2.update_yaxes(title = 'Aantal afgestudeerde')
-fig2.show()
-st.plotly_chart(fig2)
-
-
 with col2: 
   st.markdown('''**Kaart**''')
   # Kaart
@@ -98,8 +65,42 @@ with col2:
     # st.map(m)
   folium_static(m, width = 500, height = 600)
 
-#col1, col2 = st.columns(2)
-#with col1: 
+  ## Boxplot
+col1, col2 = st.columns(2)
+with col1: 
+  ### Inkomen
+  fig1 = go.Figure()
+  fig1.add_trace(go.Box(y=df['particuliere huishoudens excl. studenten, gem. besteedbaar inkomen'], name = 'Particuliere huishoudens excl. studenten' , marker_color='rgb(127, 60, 141)'))
+  fig1.add_trace(go.Box(y=df['eenpersoons- huishouden, gem. besteedbaar inkomen'], name = 'Eenpersoons- huishouden', marker_color='rgb(17, 165, 121)'))
+  fig1.add_trace(go.Box(y=df['eenouder- gezin, gem. besteedbaar inkomen'], name = 'Eenouder- gezin', marker_color='rgb(57, 105, 172)'))
+  fig1.add_trace(go.Box(y=df['paar zonder kind, gem. besteedbaar inkomen'], name = 'Paar zonder kind', marker_color='rgb(242, 183, 1)'))
+  fig1.add_trace(go.Box(y=df['paar met kinderen, gem. besteedbaar inkomen'], name = 'Paar met kinderen', marker_color='rgb(231, 63, 116)'))
+  fig1.add_trace(go.Box(y=df['inkomen als werknemer, gem. besteedbaar inkomen'], name = 'Inkomen als werknemer', marker_color='rgb(128, 186, 90)'))
+  fig1.update_layout(title_text = 'Gemiddeld besteedbaar inkomen per soort huishouden', legend_title='Verschillende huishoudens:')
+  fig1.update_yaxes(title = 'Gemiddeld besteedbaar inkomen')
+  fig1.show()
+  st.plotly_chart(fig1, layout = 'small')
+with col2:
+  ### Opleiding
+  fig2 = go.Figure()
+  fig2.add_trace(go.Box(y=df['Totaal voortgezet onderwijs (vo)'], name = 'Totaal voortgezet onderwijs (vo)', marker_color='rgb(127, 60, 141)' ))
+  fig2.add_trace(go.Box(y=df['Vavo'], name = 'Vavo', marker_color='rgb(165, 170, 153)'))
+  fig2.add_trace(go.Box(y=df['Totaal mbo (incl. extranei)'], name = 'Totaal mbo (incl. extranei)', marker_color='rgb(17, 165, 121)'))
+  fig2.add_trace(go.Box(y=df['Hbo-associate degree'], name = 'Hbo-associate degree', marker_color='rgb(57, 105, 172)'))
+  fig2.add_trace(go.Box(y=df['Hbo-bachelor'], name = 'Hbo-bachelor', marker_color='rgb(242, 183, 1)'))
+  fig2.add_trace(go.Box(y=df['Hbo-master/vervolgopleiding'], name = 'Hbo-master/vervolgopleiding', marker_color='rgb(231, 63, 116)'))
+  fig2.add_trace(go.Box(y=df['Wo-bachelor'], name = 'Wo-bachelor', marker_color='rgb(128, 186, 90)'))
+  fig2.add_trace(go.Box(y=df['Wo-master'],  name = 'Wo-master', marker_color='rgb(230, 131, 16)'))
+  fig2.add_trace(go.Box(y=df['Wo-doctoraal'],  name = 'Wo-doctoraal', marker_color='rgb(0, 134, 149)'))
+  fig2.add_trace(go.Box(y=df['Wo-vervolgopleiding'], name = 'Wo-vervolgopleiding', marker_color='rgb(207, 28, 144)'))
+  fig2.update_layout(title_text = 'Aantal afgestudeerde per opleidingssoort', legend_title='Opleiding:')
+  fig2.update_traces(width=1)
+  fig2.update_yaxes(title = 'Aantal afgestudeerde')
+  fig2.show()
+  st.plotly_chart(fig2)
+
+
+
 # Subscatter plot
 fig = make_subplots(rows=3, cols=3, subplot_titles=("Mbo scholieren","Hbo studenten", "Wo studenten"))
 fig.add_trace(
