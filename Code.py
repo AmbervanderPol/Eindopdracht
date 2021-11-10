@@ -14,11 +14,12 @@ import seaborn as sns
 import warnings
 warnings.filterwarnings('ignore')
 
-#Title
-st.title('''Het verband tussen opleiding en inkomen''')
-# st.subhead('''Gemaakt door Oussama Abou en Amber van der Pol''')
-# st.sidebar.write('''Dit is een test''')
-# st.sidebar.button('''Click me!''')
+st.set_page_config(page_title = 'Dashboard van inkomen en inleiding', layout = 'wide')
+st.title("Dashboard van inkomen en inleiding")
+st.markdown('Amber van der Pol (500803136) en Oussama Abou (500803060)')
+# st.info('''Dit interactieve dashboard geeft weer hoe de geïnspecteerde data verdeeld is. Het dashboard geeft bijvoorbeeld inzichten over hoe de brandstoftypes van auto’s verdeeld zijn, hoe laadstations verdeeld zijn over Nederland en hoe laadtijden per sessie verdeeld zijn.''')
+# st.header("Databronnen")
+# st.markdown('''De data die gebruikt wordt voor dit dashboard komt van drie verschillende bronnen.''')
 
 # Importen van de data
 df = pd.read_csv('Opleiding_inkomen.csv')
