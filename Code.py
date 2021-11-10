@@ -159,7 +159,7 @@ sns_ax1 = sns.regplot(x=df['Wo_p'], y=df['particuliere huishoudens excl. student
 sns_ax1.set_title('Aantal WO studenten x particuliere huishoudens exc. studententen')
 sns_ax1.set_ylabel('particuliere huishoudens excl. studententen')
 sns_ax1.set_xlabel('percentage Wo studenten')
-
+st.pyplot(fig)
 
 #go.Scatter(x=df['Totaal mbo (incl. extranei)_p'], y=df['paar met kinderen, gem. besteedbaar inkomen'])
 #In de grafiek is een duidelijke outlier te zien. Die er voor zorgt da
