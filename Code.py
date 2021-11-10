@@ -11,6 +11,7 @@ from plotly.subplots import make_subplots
 import folium
 import json
 import seaborn as sns
+from streamlit_folium import folium_static
 import warnings
 warnings.filterwarnings('ignore')
 
