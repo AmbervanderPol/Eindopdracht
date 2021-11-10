@@ -48,7 +48,7 @@ fig1.add_trace(go.Box(y=df['inkomen als werknemer, gem. besteedbaar inkomen'], n
 fig1.update_layout(title_text = 'Gemiddeld besteedbaar inkomen per soort huishouden', legend_title='Verschillende huishoudens:')
 fig1.update_yaxes(title = 'Gemiddeld besteedbaar inkomen')
 fig1.show()
-st.plotly_chart(fig1)
+st.plotly_chart(fig1, layout = 'small')
 
 ### Opleiding
 fig2 = go.Figure()
