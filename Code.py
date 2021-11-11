@@ -140,6 +140,10 @@ sns_ax3.set(ylim=(60,80), xlim=(0.6,1.3))
 #TEKST: Bij deze grafiek hoort een corelatiecoefficient van -0.75. Dit betekent dat er een redelijk sterke conclusie kan worden getrokken dat bij een paar met kinderen met een hoger besteedbaar inkomen minder Mbo studeren
 st.pyplot(plt)
 #TEKST: Bij deze grafiek hoort een corelatiecoefficient van -0.75. Dit betekent dat er een redelijk sterke conclusie kan worden getrokken dat bij een paar met kinderen met een hoger besteedbaar inkomen minder Mbo studeren
+with st.expander("See explanation"):
+  st.write(""" The chart above shows some numbers I picked for you.
+  I rolled actual dice for these, so they're *guaranteed* to be random.""")
+  st.image("https://static.streamlit.io/examples/dice.jpg")
 
 sns_ax2 = sns.regplot(x=df['Hbo_p'], y=df['paar met kinderen, gem. besteedbaar inkomen'], ci=None)
 sns_ax2.set_title('Percentage Hbo studenten per \n gem besteedbaar inkomen, paar met kinderen')
