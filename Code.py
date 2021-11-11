@@ -17,7 +17,7 @@ warnings.filterwarnings('ignore')
 
 st.set_page_config(page_title = 'Dashboard van inkomen en inleiding', layout = 'wide')
 st.title("Dashboard van inkomen en inleiding")
-# st.info('''Dit interactieve dashboard geeft weer hoe de geïnspecteerde data verdeeld is. Het dashboard geeft bijvoorbeeld inzichten over hoe de brandstoftypes van auto’s verdeeld zijn, hoe laadstations verdeeld zijn over Nederland en hoe laadtijden per sessie verdeeld zijn.''')
+# st.info('''\nDit interactieve dashboard geeft weer hoe de geïnspecteerde data verdeeld is. Het dashboard geeft bijvoorbeeld inzichten over hoe de brandstoftypes van auto’s verdeeld zijn, hoe laadstations verdeeld zijn over Nederland en hoe laadtijden per sessie verdeeld zijn.''')
 # st.header("Databronnen")
 # st.markdown('''De data die gebruikt wordt voor dit dashboard komt van drie verschillende bronnen.''')
 st.sidebar.write('''Dashboard is gemaakt door Amber van der Pol (500803136) en Oussama Abou (500803060).\n'''
