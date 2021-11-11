@@ -198,7 +198,7 @@ with col1:
   fig.update_layout({'updatemenus':[{'active':True, 'buttons': dropdown_buttons, 'x': 1, 'y': 1.2}]},annotations = [{'text':"Inkomen per soort", 'font_size':20, 'x': 0, 'xref':"paper", 'y':1.2, 'yref':"paper",'showarrow':False}], showlegend = False)
   fig.update_yaxes(range=[0, 80], title = 'inkomen in €1000 ')
   fig.show()  
-  st.plotly_chart(fig,)
+  st.plotly_chart(fig)
 with col2:
   opleiding_labels = df[[ 'Totaal voortgezet onderwijs (vo)_p', 'Totaal mbo (incl. extranei)_p','Vavo_p', 'Hbo-associate degree_p', 'Hbo-bachelor_p', 'Hbo-master/vervolgopleiding_p', 'Wo-bachelor_p', 'Wo-master_p','Wo-doctoraal_p', 'Wo-vervolgopleiding_p']]
   opleiding_labels = list(opleiding_labels.columns.tolist())
@@ -250,3 +250,4 @@ fig.update_layout(
     title='Voorspellingsmodel van inkomen aan de hand van percentage studenten',
     hovermode="x")
 fig.show()
+st.plotly_chart(fig,)
