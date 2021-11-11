@@ -125,7 +125,8 @@ fig.show()
 st.plotly_chart(fig)
 
 
-# Lineaire regressiesns_ax3 = sns.regplot(x=df['Totaal mbo (incl. extranei)_p'], y=df['paar met kinderen, gem. besteedbaar inkomen'], ci=None)
+# Lineaire regressie
+sns_ax3 = sns.regplot(x=df['Totaal mbo (incl. extranei)_p'], y=df['paar met kinderen, gem. besteedbaar inkomen'], ci=None)
 sns_ax3.set_xlabel('Percentage Mbo studenten')
 sns_ax3.set_ylabel('Gemiddeld besteedbaar inkomen,\n paar met kinderen')
 sns_ax3.set_title('Percentage Mbo studenten \nper gemiddeld besteedbaar inkomen, paar met kinderen')
