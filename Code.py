@@ -20,8 +20,9 @@ st.title("Dashboard van inkomen en inleiding")
 # st.info('''\nDit interactieve dashboard geeft weer hoe de geïnspecteerde data verdeeld is. Het dashboard geeft bijvoorbeeld inzichten over hoe de brandstoftypes van auto’s verdeeld zijn, hoe laadstations verdeeld zijn over Nederland en hoe laadtijden per sessie verdeeld zijn.''')
 # st.header("Databronnen")
 # st.markdown('''De data die gebruikt wordt voor dit dashboard komt van drie verschillende bronnen.''')
-st.sidebar.write('''Dashboard is gemaakt door Amber van der Pol (500803136) en Oussama Abou (500803060).\n'''
-                 '''**Bron:** de datasets komen allemaal van het cbs. ''')
+st.sidebar.write('''Dashboard is gemaakt door Amber van der Pol (500803136) en Oussama Abou (500803060).''')
+st.sidebar.write(''' ''')
+st.sidebar.write('''**Bron:** de datasets komen allemaal van het cbs. ''')
 
 # Importen van de data
 df = pd.read_csv('Opleiding_inkomen.csv')
