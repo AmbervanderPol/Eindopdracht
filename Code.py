@@ -116,10 +116,10 @@ with col2:
 col1, col2 = st.columns(2)
 
 with col1: 
-  st.write(''' Tekst over subplots''')
+  st.info(''' Tekst over subplots''')
   
 with col2:
-  st.write(''' Tekst ''')
+  st.info(''' Tekst ''')
  
 # Subscatter plot
 fig = make_subplots(rows=3, cols=3, subplot_titles=("Mbo scholieren","Hbo studenten", "Wo studenten"))
