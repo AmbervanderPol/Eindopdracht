@@ -179,13 +179,9 @@ sns_ax1.set_xlabel('Percentage Wo studenten')
 #In de grafiek is een duidelijke outlier te zien. Die er voor zorgt da
 st.pyplot(plt)
 
-with st.expander("This is a test"):
-  st.write(""" TestTestTestTestTestTestTestTestTestTestTestTestTest *Test* TestTestTestTest.""")
-  st.image("https://static.streamlit.io/examples/dice.jpg")
 
 #go.Scatter(x=df['Totaal mbo (incl. extranei)_p'], y=df['paar met kinderen, gem. besteedbaar inkomen'])
 #In de grafiek is een duidelijke outlier te zien. Die er voor zorgt da
-
 
   ## Boxplot
 col1, col2 = st.columns(2)
@@ -225,12 +221,17 @@ with col2:
   st.plotly_chart(fig)
 
 df1 = pd.read_csv('df1.csv')
-
+col1, col2 = st.columns(2)
+with col1: 
 fig = go.Figure([
     go.Scatter( name='Mbo', x=df1['Mbo_p'], y=df1['particuliere_huishoudens'], mode='markers+lines',marker=dict(color='blue', size=0.1), showlegend=True),
     go.Scatter( name='Hbo', x=df1['Hbo_p'], y=df1['particuliere_huishoudens'], mode='markers + lines', marker=dict(color='green', size=0.1), showlegend=True),
     go.Scatter( name='Wo', x=df1['Wo_p'], y=df1['particuliere_huishoudens'], mode='markers + lines', marker=dict(color='red', size=0.1), showlegend=True)])
-fig.update_layout( yaxis_title='Inkomen in x €100', title='Voorspellingsmodel van inkomen aan de hand van percentage studenten',hovermode="x")
+fig.update_layout( yaxis_title='Inkomen in x €100', xaxis_title = 'Percentage studenten', title='Voorspellingsmodel van inkomen aan de hand van percentage studenten',hovermode="x")
+fig.update_layout(yaxis_range=[0,500], xaxis_range = [-5,20])
 fig.show()
 st.plotly_chart(fig)
+with col2:
+  st.info('''**Histogram: ** Het histogram voor inkomen per soort geeft inzicht op verschillende soorten inkomen per provincie. Het histogram laat zien in welke provincies er meer wordt verdiend. Het rechte histogram laat het percentage studenten per provincie zien. Zo is hier op te zien waar de meeste hoogopgeleide gediplomeerden vandaan komen. Bij deze histogrammen is het mogelijk om onderling vergelijkingen te maken. ''')
+  st.info('''**Voorspellingsmodel:** Aan de hand van de data is geprobeerd een voorspellingsmodel te maken voor het percentage studenten en het te verdienen inkomen. Echter blijkt uit de grafiek bij een negatief percentage Mbo studenten er een stijgend inkomen is. Dit is hoogst waarschijnlijk incorrect. Uit de voorspelling blijkt dat als een er een hoger percentage Hbo of Wo studenten zijn het inkomen zal toenemen.''')
 
