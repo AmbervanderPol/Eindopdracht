@@ -35,6 +35,11 @@ with col1:
   Gelijkheid is een van onze belangrijkste normen en waarden in Nederland daarom onderzoeken we de kans-gelijkheid in het onderwijs. 
   Hiervoor hebben we de datasets van het inkomen per provincie en het gediplomeerden per onderwijsniveau per provincie van het CBS gehaald. 
   De twee datasets hebben we aan elkaar gekoppeld per provincie. Om zo te onderzoeken of rijker zijn ook betekent dat je kansrijker bent.''')
+  st.markdown('''De kaart geeft inzicht op de verhouding inwoners, inkomens en het percentage Mbo, Hbo en Wo studenten. De kaart toont de variabele per provincie middels de grootte van een cirkel.
+  Zo is te zien dat het percentage Mbo scholieren buiten de randstad hoger is dan in de randstad zelf. Het percentage Hbo studenten ongeveer gelijk blijft. Terwijl het percentage Wo studenten in de randstad groter is dan in de rest van het land. Dit kan komen doordat Mbo scholieren studeren in dezelfde provincie als waar ze wonen. Dit hoeft niet het geval te zijn bij Wo studenten.
+  Een voorbeeld hiervan is Groningen dat een van de grootste universiteiten heeft van Nederland en in het verre Noorden ligt. Omdat deze universiteit in een hoek ver in het noorden ligt zullen er meer studenten zijn die naar deze stad toe trekken om daar te wonen. Dit zorgt ervoor dat de stad meer Wo studenten heeft dan bijvoorbeeld omliggende provincies.
+  Dit kan ook komen doordat er meer Wo studenten zijn op plekken waar meer verstedelijking is. Dit zal dan nader onderzocht moeten worden.
+  Verder laat de kaart ook zien dat de verschillende soorten inkomens het zelfde zijn per provincie.''')
 with col2: 
   st.markdown('''**Kaart**''')
   # Kaart
