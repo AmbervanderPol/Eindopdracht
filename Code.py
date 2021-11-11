@@ -41,8 +41,7 @@ with col1:
   De kaart geeft inzicht op de verhouding inwoners, inkomens en het percentage Mbo, Hbo en Wo studenten. De kaart relativeert de variabele per provincie middels de grootte van een cirkel.
   Te zien is dat het percentage Mbo scholieren buiten de randstad hoger is dan in de randstad zelf. Het percentage Hbo studenten ongeveer gelijk blijft. Terwijl het percentage Wo studenten in de randstad groter is dan in de rest van het land. Dit kan komen doordat Mbo scholieren studeren in dezelfde provincie als waar ze wonen. Dit hoeft niet het geval te zijn Bij Wo studenten.
   Verder laat de kaart ook zien dat de verschillende soorten inkomens het zelfde zijn per provincie.''')
-  st.markdown('''**Boxplot:**
-  De boxplot laat het gemiddelde inkomen en de afwijking daarvan zien. In de inkomens boxplot is te zien dat des te meer er verdient wordt des te meer de standaard deviatie toeneemt. Ook is duidelijk te zien dat een paar met kinderen het hoogste inkomen heeft.''')
+  st.markdown('''**Boxplot:** De boxplot laat het gemiddelde inkomen en de afwijking daarvan zien. In de inkomens boxplot is te zien dat des te meer er verdient wordt des te meer de standaard deviatie toeneemt. Ook is duidelijk te zien dat een paar met kinderen het hoogste inkomen heeft.''')
 
 In de rechter boxplot staat het aantal gediplomeerden per opleiding soort. Hierin is te zien dat de grootste afwijkingen telkens aan de hoge kant liggen. Verder geeft deze grafiek ook een indicatie op de doorstroom vanuit het voorgezet onderwijs.''')
 with col2: 
