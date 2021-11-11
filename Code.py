@@ -131,8 +131,7 @@ sns_ax3 = sns.regplot(x=df['Totaal mbo (incl. extranei)_p'], y=df['paar met kind
 sns_ax3.set_xlabel('Aantal Mbo studentenx')
 sns_ax3.set_ylabel('gem besteedbaar inkomen, paar met kinderen')
 sns_ax3.set_title('Mbo studeten x gem besteedbaar inkomen, paar met kinderen')
-plt3.show()
-st.pyplot(plt3)
+st.pyplot(plt)
 #TEKST: Bij deze grafiek hoort een corelatiecoefficient van -0.75. Dit betekent dat er een redelijk sterke conclusie kan worden getrokken dat bij een paar met kinderen met een hoger besteedbaar inkomen minder Mbo studeren
 
 sns_ax2 = sns.regplot(x='Wo', y='paar met kinderen, gem. besteedbaar inkomen', data=df, order=1, ci=None)
