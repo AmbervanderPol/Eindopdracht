@@ -119,28 +119,30 @@ with col1:
   st.write(''' Tekst over subplots''')
   
 with col2:
-  # Subscatter plot
-  fig = make_subplots(rows=3, cols=3, subplot_titles=("Mbo scholieren","Hbo studenten", "Wo studenten"))
-  fig.add_trace(go.Scatter(x=df['Totaal mbo (incl. extranei)_p'], y=df['particuliere huishoudens excl. studenten, gem. besteedbaar inkomen'], mode='markers+text', marker_color=px.colors.qualitative.Bold), row=1, col=1)
-  fig.add_trace(go.Scatter(x=df['Hbo_p'], y=df['particuliere huishoudens excl. studenten, gem. besteedbaar inkomen'], mode='markers+text', marker_color=px.colors.qualitative.Bold),row=1, col=2)
-  fig.add_trace(go.Scatter(x=df['Wo_p'], y=df['particuliere huishoudens excl. studenten, gem. besteedbaar inkomen'], mode='markers+text', marker_color=px.colors.qualitative.Bold),row=1, col=3)
-  fig.add_trace(go.Scatter(x=df['Totaal mbo (incl. extranei)_p'], y=df['eenpersoons- huishouden, gem. besteedbaar inkomen'], mode='markers+text', marker_color=px.colors.qualitative.Bold), row=2, col=1)
-  fig.add_trace(go.Scatter(x=df['Hbo_p'], y=df['eenpersoons- huishouden, gem. besteedbaar inkomen'], mode='markers+text', marker_color=px.colors.qualitative.Bold), row=2, col=2)
+  st.write(''' Tekst ''')
+ 
+# Subscatter plot
+fig = make_subplots(rows=3, cols=3, subplot_titles=("Mbo scholieren","Hbo studenten", "Wo studenten"))
+fig.add_trace(go.Scatter(x=df['Totaal mbo (incl. extranei)_p'], y=df['particuliere huishoudens excl. studenten, gem. besteedbaar inkomen'], mode='markers+text', marker_color=px.colors.qualitative.Bold), row=1, col=1)
+fig.add_trace(go.Scatter(x=df['Hbo_p'], y=df['particuliere huishoudens excl. studenten, gem. besteedbaar inkomen'], mode='markers+text', marker_color=px.colors.qualitative.Bold),row=1, col=2)
+fig.add_trace(go.Scatter(x=df['Wo_p'], y=df['particuliere huishoudens excl. studenten, gem. besteedbaar inkomen'], mode='markers+text', marker_color=px.colors.qualitative.Bold),row=1, col=3)
+fig.add_trace(go.Scatter(x=df['Totaal mbo (incl. extranei)_p'], y=df['eenpersoons- huishouden, gem. besteedbaar inkomen'], mode='markers+text', marker_color=px.colors.qualitative.Bold), row=2, col=1)
+fig.add_trace(go.Scatter(x=df['Hbo_p'], y=df['eenpersoons- huishouden, gem. besteedbaar inkomen'], mode='markers+text', marker_color=px.colors.qualitative.Bold), row=2, col=2)
   
-  fig.add_trace(go.Scatter(x=df['Wo_p'], y=df['eenpersoons- huishouden, gem. besteedbaar inkomen'], mode='markers+text', marker_color=px.colors.qualitative.Bold), row=2, col=3)
-  fig.add_trace(go.Scatter(x=df['Totaal mbo (incl. extranei)_p'], y=df['paar met kinderen, gem. besteedbaar inkomen'], mode='markers+text', marker_color=px.colors.qualitative.Bold), row=3, col=1)
-  fig.add_trace(go.Scatter(x=df['Hbo_p'], y=df['paar met kinderen, gem. besteedbaar inkomen'], mode='markers+text', marker_color=px.colors.qualitative.Bold), row=3, col=2)
-  fig.add_trace(go.Scatter(x=df['Wo_p'], y=df['paar met kinderen, gem. besteedbaar inkomen'], mode='markers+text', marker_color=px.colors.qualitative.Bold), row=3, col=3)
+fig.add_trace(go.Scatter(x=df['Wo_p'], y=df['eenpersoons- huishouden, gem. besteedbaar inkomen'], mode='markers+text', marker_color=px.colors.qualitative.Bold), row=2, col=3)
+fig.add_trace(go.Scatter(x=df['Totaal mbo (incl. extranei)_p'], y=df['paar met kinderen, gem. besteedbaar inkomen'], mode='markers+text', marker_color=px.colors.qualitative.Bold), row=3, col=1)
+fig.add_trace(go.Scatter(x=df['Hbo_p'], y=df['paar met kinderen, gem. besteedbaar inkomen'], mode='markers+text', marker_color=px.colors.qualitative.Bold), row=3, col=2)
+fig.add_trace(go.Scatter(x=df['Wo_p'], y=df['paar met kinderen, gem. besteedbaar inkomen'], mode='markers+text', marker_color=px.colors.qualitative.Bold), row=3, col=3)
   
-  fig['layout']['yaxis1']['title']='Paar met<br>kinderen'
-  fig['layout']['yaxis4']['title']='Eenpersoons-<br>huishouden'
-  fig['layout']['yaxis7']['title']='Particuliere huishoudens<br>excl. student'
+fig['layout']['yaxis1']['title']='Paar met<br>kinderen'
+fig['layout']['yaxis4']['title']='Eenpersoons-<br>huishouden'
+fig['layout']['yaxis7']['title']='Particuliere huishoudens<br>excl. student'
   
-  fig.update_yaxes(range=[15, 80])
-  fig.update_xaxes(range=[0, 1.2])
-  fig.update_layout(height=800, width=900, title_text="Inkomen en opleiding",showlegend=False)
-  fig.show()
-  st.plotly_chart(fig)
+fig.update_yaxes(range=[15, 80])
+fig.update_xaxes(range=[0, 1.2])
+fig.update_layout(height=800, width=900, title_text="Inkomen en opleiding",showlegend=False)
+fig.show()
+st.plotly_chart(fig)
 
 
 # Lineaire regressie
