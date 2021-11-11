@@ -215,4 +215,38 @@ with col2:
   fig.show()
   st.plotly_chart(fig)
 
-  
+mdl_Mbo_inkomen = ols('Mbo_p~particuliere_huishoudens', data=df).fit()
+mdl_Mbo_inkomen.params
+explanatory_data1= pd.DataFrame({'particuliere_huishoudens': np.arange(0, 1600)})
+
+mdl_Hbo_inkomen = ols('Hbo_p~particuliere_huishoudens', data=df).fit()
+mdl_Hbo_inkomen.params
+explanatory_data2= pd.DataFrame({'particuliere_huishoudens': np.arange(0, 1600)})
+
+mdl_Wo_inkomen = ols('Wo_p~particuliere_huishoudens', data=df).fit()
+mdl_Wo_inkomen.params
+explanatory_data3= pd.DataFrame({'particuliere_huishoudens': np.arange(0, 1600)})
+
+pred_Mbo = explanatory_data1.assign(Mbo_p=mdl_Mbo_inkomen.predict(explanatory_data1))
+pred_Hbo = explanatory_data2.assign(Hbo_p=mdl_Hbo_inkomen.predict(explanatory_data2))
+pred_Wo = explanatory_data3.assign(Wo_p=mdl_Wo_inkomen.predict(explanatory_data3))
+
+pred_Mbo = pd.DataFrame(pred_Mbo)
+pred_Hbo = pd.DataFrame(pred_Hbo)
+pred_Wo = pd.DataFrame(pred_Wo)
+df1 = pd.merge(pred_Wo, pred_Hbo, on='particuliere_huishoudens')
+df1 = pd.merge(pred_Mbo, df1, on='particuliere_huishoudens') 
+
+fig = go.Figure([
+    go.Scatter( name='Mbo', x=df1['Mbo_p'], y=df1['particuliere_huishoudens'], mode='markers+lines',
+        marker=dict(color='blue', size=0.1), showlegend=True),
+    go.Scatter( name='Hbo', x=df1['Hbo_p'], y=df1['particuliere_huishoudens'],
+        mode='markers + lines', marker=dict(color='green', size=0.1), showlegend=True),
+    go.Scatter( name='Wo', x=df1['Wo_p'], y=df1['particuliere_huishoudens'],
+        mode='markers + lines', marker=dict(color='red', size=0.1), showlegend=True
+    )])
+fig.update_layout(
+    yaxis_title='Inkomen in x €100',
+    title='Voorspellingsmodel van inkomen aan de hand van percentage studenten',
+    hovermode="x")
+fig.show()
