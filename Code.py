@@ -13,6 +13,9 @@ import json
 import seaborn as sns
 from streamlit_folium import folium_static
 import warnings
+import statsmodels.api as sm
+from statsmodels.formula.api import ols
+import numpy as np
 warnings.filterwarnings('ignore')
 
 st.set_page_config(page_title = 'Dashboard van inkomen en inleiding', layout = 'wide')
@@ -212,3 +215,4 @@ with col2:
   fig.show()
   st.plotly_chart(fig)
 
+  
