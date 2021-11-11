@@ -36,7 +36,7 @@ with col1:
   Hiervoor hebben we de datasets van het inkomen per provincie en het gediplomeerden per onderwijsniveau per provincie van het CBS gehaald. 
   De twee datasets hebben we aan elkaar gekoppeld per provincie. Om zo te onderzoeken of rijker zijn ook betekent dat je kansrijker bent.''')
   st.markdown(''' ''')
-  st.markdown('''*** Kaart: ***''')
+  st.markdown('''**Kaart:**''')
   st.markdown('''De kaart geeft inzicht op de verhouding inwoners, inkomens en het percentage Mbo, Hbo en Wo studenten. De kaart toont de variabele per provincie middels de grootte van een cirkel.
   Zo is te zien dat het percentage Mbo scholieren buiten de randstad hoger is dan in de randstad zelf. Het percentage Hbo studenten ongeveer gelijk blijft. Terwijl het percentage Wo studenten in de randstad groter is dan in de rest van het land. Dit kan komen doordat Mbo scholieren studeren in dezelfde provincie als waar ze wonen. Dit hoeft niet het geval te zijn bij Wo studenten.
   Dit kan ook komen doordat er meer Wo studenten zijn op plekken waar meer verstedelijking is. Dit zal dan nader onderzocht moeten worden.
