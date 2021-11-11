@@ -17,7 +17,7 @@ warnings.filterwarnings('ignore')
 
 st.set_page_config(page_title = 'Dashboard van inkomen en inleiding', layout = 'wide')
 st.title("Dashboard van inkomen en inleiding")
-# st.info('''\nDit interactieve dashboard geeft weer hoe de geïnspecteerde data verdeeld is. Het dashboard geeft bijvoorbeeld inzichten over hoe de brandstoftypes van auto’s verdeeld zijn, hoe laadstations verdeeld zijn over Nederland en hoe laadtijden per sessie verdeeld zijn.''')
+# st.info('''\n''')
 # st.header("Databronnen")
 # st.markdown('''De data die gebruikt wordt voor dit dashboard komt van drie verschillende bronnen.''')
 st.sidebar.write('''Dashboard is gemaakt door Amber van der Pol (500803136) en Oussama Abou (500803060).''')
@@ -32,14 +32,11 @@ col1, col2 = st.columns(2)
 
 with col1: 
   st.markdown('''**Inkomen en opleiding**  ''')
-  st.markdown('''Gelijkheid is een van onze belangrijkste normen en waarden in Nederland daarom onderzoeken we de kans-gelijkheid in het onderwijs. 
-  Hiervoor hebben we de datasets van het inkomen per provincie en het gediplomeerden per onderwijsniveau per provincie van het CBS gehaald. 
-  De twee datasets hebben we aan elkaar gekoppeld per provincie. Om zo te onderzoeken of rijker zijn ook betekent dat je kansrijker bent.''')
+  st.markdown('''Gelijkheid is een van onze belangrijkste normen en waarden in Nederland daarom onderzoeken we de kans-gelijkheid in het onderwijs. Hiervoor hebben we de datasets van het inkomen per provincie en het gediplomeerden per onderwijsniveau per provincie van het CBS gehaald. De twee datasets hebben we aan elkaar gekoppeld per provincie. Om zo te onderzoeken of rijker zijn ook betekent dat je kansrijker bent.''')
   st.markdown(''' ''')
   st.markdown('''**Kaart:**''')
-  st.markdown('''De kaart geeft inzicht op de verhouding inwoners, inkomens en het percentage Mbo, Hbo en Wo studenten. De kaart toont de variabele per provincie middels de grootte van een cirkel.
-  Zo is te zien dat het percentage Mbo scholieren buiten de randstad hoger is dan in de randstad zelf. Het percentage Hbo studenten ongeveer gelijk blijft. Terwijl het percentage Wo studenten in de randstad groter is dan in de rest van het land. Dit kan komen doordat Mbo scholieren studeren in dezelfde provincie als waar ze wonen. Dit hoeft niet het geval te zijn bij Wo studenten.
-  Dit kan ook komen doordat er meer Wo studenten zijn op plekken waar meer verstedelijking is. Dit zal dan nader onderzocht moeten worden.
+  st.markdown('''De kaart geeft inzicht op de verhouding inwoners, inkomens en het percentage Mbo, Hbo en Wo studenten. De kaart relativeert de variabele per provincie middels de grootte van een cirkel.
+  Te zien is dat het percentage Mbo scholieren buiten de randstad hoger is dan in de randstad zelf. Het percentage Hbo studenten ongeveer gelijk blijft. Terwijl het percentage Wo studenten in de randstad groter is dan in de rest van het land. Dit kan komen doordat Mbo scholieren studeren in dezelfde provincie als waar ze wonen. Dit hoeft niet het geval te zijn Bij Wo studenten.
   Verder laat de kaart ook zien dat de verschillende soorten inkomens het zelfde zijn per provincie.''')
 with col2: 
   st.markdown('''**Kaart**''')
