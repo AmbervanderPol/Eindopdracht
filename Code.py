@@ -143,11 +143,11 @@ sns_ax2.set_title('Percentage Hbo studenten per \n gem besteedbaar inkomen, paar
 sns_ax2.set_ylabel('Gemiddeld besteedbaar inkomen,\n paar met kinderen')
 sns_ax2.set_xlabel('Percentage Hbo studenten')
 sns_ax2.set(ylim=(60,80), xlim=(0.28,0.50))
+st.pyplot(plt)
 #TEKST: In onderstaand grafiek is te zien hoe het percentage universiteits studenten lineair stijgt als het gemiddelde besteedbare inkomen van een paar met kinderen ook stijgt. bij een lage aantal studenten is te zien dat het inkomen geclusterd is. naarmate het inkomen stijgt is de afstand tot de regressielijn per provincie groter. correlatiecoefficient is 0.71. wat betekent dat er een redelijk verband is tussen de twee variabelen.st.pyplot(plt)
 #TEKST: In onderstaand grafiek is te zien hoe het percentage universiteits studenten lineair stijgt als het gemiddelde besteedbare inkomen van een paar met kinderen ook stijgt. bij een lage aantal studenten is te zien dat het inkomen geclusterd is. naarmate het inkomen stijgt is de afstand tot de regressielijn per provincie groter. correlatiecoefficient is 0.71. wat betekent dat er een redelijk verband is tussen de twee variabelen.
 
 df = df.loc[df['Wo_p']<1]
-df['Wo_p']
 sns_ax1 = sns.regplot(x=df['Wo_p'], y=df['particuliere huishoudens excl. studenten, gem. besteedbaar inkomen'], ci=None)
 sns_ax1.set_title('Percentage Wo studenten per \n particuliere huishoudens exc. studententen')
 sns_ax1.set_ylabel('Particuliere huishoudens excl. studententen')
