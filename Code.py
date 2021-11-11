@@ -223,17 +223,10 @@ with col2:
 df1 = pd.read_csv('df1.csv')
 
 fig = go.Figure([
-    go.Scatter( name='Mbo', x=df1['Mbo_p'], y=df1['particuliere_huishoudens'], mode='markers+lines',
-        marker=dict(color='blue', size=0.1), showlegend=True),
-    go.Scatter( name='Hbo', x=df1['Hbo_p'], y=df1['particuliere_huishoudens'],
-        mode='markers + lines', marker=dict(color='green', size=0.1), showlegend=True),
-    go.Scatter( name='Wo', x=df1['Wo_p'], y=df1['particuliere_huishoudens'],
-        mode='markers + lines', marker=dict(color='red', size=0.1), showlegend=True
-    )])
-fig.update_layout(
-    yaxis_title='Inkomen in x €100',
-    title='Voorspellingsmodel van inkomen aan de hand van percentage studenten',
-    hovermode="x")
+    go.Scatter( name='Mbo', x=df1['Mbo_p'], y=df1['particuliere_huishoudens'], mode='markers+lines',marker=dict(color='blue', size=0.1), showlegend=True),
+    go.Scatter( name='Hbo', x=df1['Hbo_p'], y=df1['particuliere_huishoudens'], mode='markers + lines', marker=dict(color='green', size=0.1), showlegend=True),
+    go.Scatter( name='Wo', x=df1['Wo_p'], y=df1['particuliere_huishoudens'], mode='markers + lines', marker=dict(color='red', size=0.1), showlegend=True)])
+fig.update_layout( yaxis_title='Inkomen in x €100', title='Voorspellingsmodel van inkomen aan de hand van percentage studenten',hovermode="x")
 fig.show()
 st.plotly_chart(fig)
 
