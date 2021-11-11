@@ -113,13 +113,8 @@ with col2:
   st.plotly_chart(fig2)
 
 
-col1, col2 = st.columns(2)
-
-with col1: 
-  st.info(''' Tekst over subplots''')
-  
-with col2:
-  st.info(''' Tekst ''')
+st.info('''** Subplots**:
+In de grafieken van de subplots wordt er gekeken naar de verschillende opleidingsniveaus: Mbo, Hbo en Wo. Het onderwijs niveau wordt geplot ten opzichte van het gemiddelde inkomen van: een eenpersoonshuishouden, een paar met kinderen en een particuliere huishoudens exclusief studenten.''')
  
 # Subscatter plot
 fig = make_subplots(rows=3, cols=3, subplot_titles=("Mbo scholieren","Hbo studenten", "Wo studenten"))
