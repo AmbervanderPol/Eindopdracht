@@ -140,7 +140,7 @@ st.plotly_chart(fig)
 
 
 # Lineaire regressie
-with st.expander("Uitleg percentage Mbo studenten per gemiddeld besteedbaar inkomen, paar met kinderen"):
+with st.expander("Uitleg: percentage Mbo studenten per gemiddeld besteedbaar inkomen, paar met kinderen"):
   st.write("""Het percentage Mbo studenten per gemiddeld besteedbaar inkomen, paar met kinderen is een dalende trend met niet al teveel grote afwijkingen van de regressielijn.""")
 
 sns_ax3 = sns.regplot(x=df['Totaal mbo (incl. extranei)_p'], y=df['paar met kinderen, gem. besteedbaar inkomen'], ci=None)
