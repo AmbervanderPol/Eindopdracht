@@ -223,6 +223,9 @@ with col2:
 df1 = pd.read_csv('df1.csv')
 col1, col2 = st.columns(2)
 with col1: 
+  st.info('''**Histogram: ** Het histogram voor inkomen per soort geeft inzicht op verschillende soorten inkomen per provincie. Het histogram laat zien in welke provincies er meer wordt verdiend. Het rechte histogram laat het percentage studenten per provincie zien. Zo is hier op te zien waar de meeste hoogopgeleide gediplomeerden vandaan komen. Bij deze histogrammen is het mogelijk om onderling vergelijkingen te maken. ''')
+  st.info('''**Voorspellingsmodel:** Aan de hand van de data is geprobeerd een voorspellingsmodel te maken voor het percentage studenten en het te verdienen inkomen. Echter blijkt uit de grafiek bij een negatief percentage Mbo studenten er een stijgend inkomen is. Dit is hoogst waarschijnlijk incorrect. Uit de voorspelling blijkt dat als een er een hoger percentage Hbo of Wo studenten zijn het inkomen zal toenemen.''')
+with col2:
   fig = go.Figure([
     go.Scatter( name='Mbo', x=df1['Mbo_p'], y=df1['particuliere_huishoudens'], mode='markers+lines',marker=dict(color='blue', size=0.1), showlegend=True),
     go.Scatter( name='Hbo', x=df1['Hbo_p'], y=df1['particuliere_huishoudens'], mode='markers + lines', marker=dict(color='green', size=0.1), showlegend=True),
@@ -231,7 +234,3 @@ with col1:
   fig.update_layout(yaxis_range=[0,500], xaxis_range = [-5,20])
   fig.show()
   st.plotly_chart(fig)
-with col2:
-  st.info('''**Histogram: ** Het histogram voor inkomen per soort geeft inzicht op verschillende soorten inkomen per provincie. Het histogram laat zien in welke provincies er meer wordt verdiend. Het rechte histogram laat het percentage studenten per provincie zien. Zo is hier op te zien waar de meeste hoogopgeleide gediplomeerden vandaan komen. Bij deze histogrammen is het mogelijk om onderling vergelijkingen te maken. ''')
-  st.info('''**Voorspellingsmodel:** Aan de hand van de data is geprobeerd een voorspellingsmodel te maken voor het percentage studenten en het te verdienen inkomen. Echter blijkt uit de grafiek bij een negatief percentage Mbo studenten er een stijgend inkomen is. Dit is hoogst waarschijnlijk incorrect. Uit de voorspelling blijkt dat als een er een hoger percentage Hbo of Wo studenten zijn het inkomen zal toenemen.''')
-
