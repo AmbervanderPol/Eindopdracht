@@ -37,8 +37,8 @@ with col1:
   st.markdown('''**Inkomen en opleiding**  ''')
   st.markdown('''Gelijkheid is een van onze belangrijkste normen en waarden in Nederland daarom onderzoeken we de kans-gelijkheid in het onderwijs. Hiervoor hebben we de datasets van het inkomen per provincie en het gediplomeerden per onderwijsniveau per provincie van het CBS gehaald. De twee datasets hebben we aan elkaar gekoppeld per provincie. Om zo te onderzoeken of rijker zijn ook betekent dat je kansrijker bent.''')
   st.markdown(''' ''')
-  st.markdown('''**Kaart:**''') 
-  st.markdown('''De kaart geeft inzicht op de verhouding inwoners, inkomens en het percentage Mbo, Hbo en Wo studenten. De kaart relativeert de variabele per provincie middels de grootte van een cirkel.
+  st.markdown('''**Kaart:**
+  De kaart geeft inzicht op de verhouding inwoners, inkomens en het percentage Mbo, Hbo en Wo studenten. De kaart relativeert de variabele per provincie middels de grootte van een cirkel.
   Te zien is dat het percentage Mbo scholieren buiten de randstad hoger is dan in de randstad zelf. Het percentage Hbo studenten ongeveer gelijk blijft. Terwijl het percentage Wo studenten in de randstad groter is dan in de rest van het land. Dit kan komen doordat Mbo scholieren studeren in dezelfde provincie als waar ze wonen. Dit hoeft niet het geval te zijn Bij Wo studenten.
   Verder laat de kaart ook zien dat de verschillende soorten inkomens het zelfde zijn per provincie.''')
 with col2: 
