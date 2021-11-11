@@ -221,6 +221,7 @@ with col2:
   st.plotly_chart(fig)
 
 df1 = pd.read_csv('df1.csv')
+
 fig = go.Figure([
     go.Scatter( name='Mbo', x=df1['Mbo_p'], y=df1['particuliere_huishoudens'], mode='markers+lines',
         marker=dict(color='blue', size=0.1), showlegend=True),
@@ -234,3 +235,5 @@ fig.update_layout(
     title='Voorspellingsmodel van inkomen aan de hand van percentage studenten',
     hovermode="x")
 fig.show()
+st.plotly_chart(fig)
+
