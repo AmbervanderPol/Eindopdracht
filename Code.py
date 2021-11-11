@@ -154,6 +154,10 @@ st.pyplot(plt)
 #TEKST: In onderstaand grafiek is te zien hoe het percentage universiteits studenten lineair stijgt als het gemiddelde besteedbare inkomen van een paar met kinderen ook stijgt. bij een lage aantal studenten is te zien dat het inkomen geclusterd is. naarmate het inkomen stijgt is de afstand tot de regressielijn per provincie groter. correlatiecoefficient is 0.71. wat betekent dat er een redelijk verband is tussen de twee variabelen.st.pyplot(plt)
 #TEKST: In onderstaand grafiek is te zien hoe het percentage universiteits studenten lineair stijgt als het gemiddelde besteedbare inkomen van een paar met kinderen ook stijgt. bij een lage aantal studenten is te zien dat het inkomen geclusterd is. naarmate het inkomen stijgt is de afstand tot de regressielijn per provincie groter. correlatiecoefficient is 0.71. wat betekent dat er een redelijk verband is tussen de twee variabelen.
 
+with st.expander("This is a test"):
+  st.write(""" TestTestTestTestTestTestTestTestTestTestTestTestTest *Test* TestTestTestTest.""")
+  st.image("https://static.streamlit.io/examples/dice.jpg")
+
 df = df.loc[df['Wo_p']<1]
 sns_ax1 = sns.regplot(x=df['Wo_p'], y=df['particuliere huishoudens excl. studenten, gem. besteedbaar inkomen'], ci=None)
 sns_ax1.set_title('Percentage Wo studenten per \n particuliere huishoudens exc. studententen')
@@ -162,6 +166,10 @@ sns_ax1.set_xlabel('Percentage Wo studenten')
 #go.Scatter(x=df['Totaal mbo (incl. extranei)_p'], y=df['paar met kinderen, gem. besteedbaar inkomen'])
 #In de grafiek is een duidelijke outlier te zien. Die er voor zorgt da
 st.pyplot(plt)
+
+with st.expander("This is a test"):
+  st.write(""" TestTestTestTestTestTestTestTestTestTestTestTestTest *Test* TestTestTestTest.""")
+  st.image("https://static.streamlit.io/examples/dice.jpg")
 
 #go.Scatter(x=df['Totaal mbo (incl. extranei)_p'], y=df['paar met kinderen, gem. besteedbaar inkomen'])
 #In de grafiek is een duidelijke outlier te zien. Die er voor zorgt da
