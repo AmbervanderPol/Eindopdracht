@@ -124,37 +124,41 @@ fig.update_layout(height=800, width=900, title_text="Inkomen en opleiding",showl
 fig.show()
 st.plotly_chart(fig)
 
+col1, col2, col3 = st.columns(3)
 
 # Lineaire regressie
-sns_ax3 = sns.regplot(x=df['Totaal mbo (incl. extranei)_p'], y=df['paar met kinderen, gem. besteedbaar inkomen'], ci=None)
-sns_ax3.set_xlabel('Percentage Mbo studenten')
-sns_ax3.set_ylabel('Gemiddeld besteedbaar inkomen,\n paar met kinderen')
-sns_ax3.set_title('Percentage Mbo studenten \nper gemiddeld besteedbaar inkomen, paar met kinderen')
-sns_ax3.set(ylim=(60,80), xlim=(0.6,1.3))
+while col1:
+  sns_ax3 = sns.regplot(x=df['Totaal mbo (incl. extranei)_p'], y=df['paar met kinderen, gem. besteedbaar inkomen'], ci=None)
+  sns_ax3.set_xlabel('Percentage Mbo studenten')
+  sns_ax3.set_ylabel('Gemiddeld besteedbaar inkomen,\n paar met kinderen')
+  sns_ax3.set_title('Percentage Mbo studenten \nper gemiddeld besteedbaar inkomen, paar met kinderen')
+  sns_ax3.set(ylim=(60,80), xlim=(0.6,1.3))
 #go.Scatter(x=df['Totaal mbo (incl. extranei)_p'], y=df['paar met kinderen, gem. besteedbaar inkomen'])
 #TEKST: Bij deze grafiek hoort een corelatiecoefficient van -0.75. Dit betekent dat er een redelijk sterke conclusie kan worden getrokken dat bij een paar met kinderen met een hoger besteedbaar inkomen minder Mbo studeren
 #go.Scatter(x=df['Totaal mbo (incl. extranei)_p'], y=df['paar met kinderen, gem. besteedbaar inkomen'])
 #TEKST: Bij deze grafiek hoort een corelatiecoefficient van -0.75. Dit betekent dat er een redelijk sterke conclusie kan worden getrokken dat bij een paar met kinderen met een hoger besteedbaar inkomen minder Mbo studeren
-st.pyplot(plt)
+  st.pyplot(plt)
 #TEKST: Bij deze grafiek hoort een corelatiecoefficient van -0.75. Dit betekent dat er een redelijk sterke conclusie kan worden getrokken dat bij een paar met kinderen met een hoger besteedbaar inkomen minder Mbo studeren
 
-sns_ax2 = sns.regplot(x=df['Hbo_p'], y=df['paar met kinderen, gem. besteedbaar inkomen'], ci=None)
-sns_ax2.set_title('Percentage Hbo studenten per \n gem besteedbaar inkomen, paar met kinderen')
-sns_ax2.set_ylabel('Gemiddeld besteedbaar inkomen,\n paar met kinderen')
-sns_ax2.set_xlabel('Percentage Hbo studenten')
-sns_ax2.set(ylim=(60,80), xlim=(0.28,0.50))
-st.pyplot(plt)
+while col2:
+  sns_ax2 = sns.regplot(x=df['Hbo_p'], y=df['paar met kinderen, gem. besteedbaar inkomen'], ci=None)
+  sns_ax2.set_title('Percentage Hbo studenten per \n gem besteedbaar inkomen, paar met kinderen')
+  sns_ax2.set_ylabel('Gemiddeld besteedbaar inkomen,\n paar met kinderen')
+  sns_ax2.set_xlabel('Percentage Hbo studenten')
+  sns_ax2.set(ylim=(60,80), xlim=(0.28,0.50))
+  st.pyplot(plt)
 #TEKST: In onderstaand grafiek is te zien hoe het percentage universiteits studenten lineair stijgt als het gemiddelde besteedbare inkomen van een paar met kinderen ook stijgt. bij een lage aantal studenten is te zien dat het inkomen geclusterd is. naarmate het inkomen stijgt is de afstand tot de regressielijn per provincie groter. correlatiecoefficient is 0.71. wat betekent dat er een redelijk verband is tussen de twee variabelen.st.pyplot(plt)
 #TEKST: In onderstaand grafiek is te zien hoe het percentage universiteits studenten lineair stijgt als het gemiddelde besteedbare inkomen van een paar met kinderen ook stijgt. bij een lage aantal studenten is te zien dat het inkomen geclusterd is. naarmate het inkomen stijgt is de afstand tot de regressielijn per provincie groter. correlatiecoefficient is 0.71. wat betekent dat er een redelijk verband is tussen de twee variabelen.
 
-df = df.loc[df['Wo_p']<1]
-sns_ax1 = sns.regplot(x=df['Wo_p'], y=df['particuliere huishoudens excl. studenten, gem. besteedbaar inkomen'], ci=None)
-sns_ax1.set_title('Percentage Wo studenten per \n particuliere huishoudens exc. studententen')
-sns_ax1.set_ylabel('Particuliere huishoudens excl. studententen')
-sns_ax1.set_xlabel('Percentage Wo studenten')
+while col3:
+  df = df.loc[df['Wo_p']<1]
+  sns_ax1 = sns.regplot(x=df['Wo_p'], y=df['particuliere huishoudens excl. studenten, gem. besteedbaar inkomen'], ci=None)
+  sns_ax1.set_title('Percentage Wo studenten per \n particuliere huishoudens exc. studententen')
+  sns_ax1.set_ylabel('Particuliere huishoudens excl. studententen')
+  sns_ax1.set_xlabel('Percentage Wo studenten')
 #go.Scatter(x=df['Totaal mbo (incl. extranei)_p'], y=df['paar met kinderen, gem. besteedbaar inkomen'])
 #In de grafiek is een duidelijke outlier te zien. Die er voor zorgt da
-st.pyplot(plt)
+  st.pyplot(plt)
 
 #go.Scatter(x=df['Totaal mbo (incl. extranei)_p'], y=df['paar met kinderen, gem. besteedbaar inkomen'])
 #In de grafiek is een duidelijke outlier te zien. Die er voor zorgt da
