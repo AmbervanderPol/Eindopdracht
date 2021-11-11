@@ -140,7 +140,7 @@ st.plotly_chart(fig)
 
 
 # Lineaire regressie
-with st.expander("**Uitleg** percentage Mbo studenten per gemiddeld besteedbaar inkomen, paar met kinderen"):
+with st.expander("Uitleg percentage Mbo studenten per gemiddeld besteedbaar inkomen, paar met kinderen"):
   st.write("""Het percentage Mbo studenten per gemiddeld besteedbaar inkomen, paar met kinderen is een dalende trend met niet al teveel grote afwijkingen van de regressielijn.""")
 
 sns_ax3 = sns.regplot(x=df['Totaal mbo (incl. extranei)_p'], y=df['paar met kinderen, gem. besteedbaar inkomen'], ci=None)
@@ -155,7 +155,7 @@ sns_ax3.set(ylim=(60,80), xlim=(0.6,1.3))
 st.pyplot(plt)
 #TEKST: Bij deze grafiek hoort een corelatiecoefficient van -0.75. Dit betekent dat er een redelijk sterke conclusie kan worden getrokken dat bij een paar met kinderen met een hoger besteedbaar inkomen minder Mbo studeren
 
-with st.expander("**Uitleg:** percentage Hbo studenten"):
+with st.expander("Uitleg: percentage Hbo studenten"):
   st.write(""" Voor het verband tussen het percentage Hbo studenten en het gemiddeld besteedbaar inkomen van een paar met kinderen geldt een lichte dalende regressielijn. In deze scatterplot liggen de waardes redelijk ver van de regressielijn.""")
 
 sns_ax2 = sns.regplot(x=df['Hbo_p'], y=df['paar met kinderen, gem. besteedbaar inkomen'], ci=None)
@@ -167,7 +167,7 @@ st.pyplot(plt)
 #TEKST: In onderstaand grafiek is te zien hoe het percentage universiteits studenten lineair stijgt als het gemiddelde besteedbare inkomen van een paar met kinderen ook stijgt. bij een lage aantal studenten is te zien dat het inkomen geclusterd is. naarmate het inkomen stijgt is de afstand tot de regressielijn per provincie groter. correlatiecoefficient is 0.71. wat betekent dat er een redelijk verband is tussen de twee variabelen.st.pyplot(plt)
 #TEKST: In onderstaand grafiek is te zien hoe het percentage universiteits studenten lineair stijgt als het gemiddelde besteedbare inkomen van een paar met kinderen ook stijgt. bij een lage aantal studenten is te zien dat het inkomen geclusterd is. naarmate het inkomen stijgt is de afstand tot de regressielijn per provincie groter. correlatiecoefficient is 0.71. wat betekent dat er een redelijk verband is tussen de twee variabelen.
 
-with st.expander("**Uitleg** percentage Wo studenten per particuliere huishoudens excl. studenten"):
+with st.expander("Uitleg: percentage Wo studenten per particuliere huishoudens excl. studenten"):
   st.write(""" De grafiek van het percentage Wo- studenten en het inkomen van het particulier huishouden exclusief studenten heeft een regressielijn met lichte daling. Ook moet er rekening worden gehouden bij het inschatten van de helling van de met de x en y -assen om te kijken of het om een significant verschil gaat.""")
   
 df = df.loc[df['Wo_p']<1]
